@@ -1092,6 +1092,7 @@ main {
   }
   .mobile__menu__wrapper .custom__select__wrapper:hover .custom__options__block {
     padding: 0;
+    height: 100%;
   }
   .mobile__menu__wrapper .custom__select__title {
     padding: 0 0 2rem 6rem;
