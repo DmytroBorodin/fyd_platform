@@ -166,31 +166,31 @@ nav {
 
 .menu__item.left {
   width: 32.44%;
-  padding-right: 11.42%;
+  padding-right: 8.42%;
 }
 
 .menu__item.center {
   width: 39.5%;
-  padding: 0 11.42%;
+  padding: 0 8.42%;
 }
 
 .menu__item.right {
   width: 28.05%;
-  padding-left: 11.42%;
+  padding-left: 8.42%;
 }
 
 .menu__link {
   width: 100%;
   font-size: 1.6rem;
   line-height: 1.125;
-  letter-spacing: -0.08rem;
+  font-weight: 500;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  color: #818181;
+  color: #dadadc;
 }
 
 .menu__link:hover {
-  font-weight: 500;
+  color: #818181;
 }
 
 span.vb {
@@ -215,9 +215,8 @@ span.vb {
 .main__btn {
   font-size: 1.5rem;
   line-height: 1.2;
-  font-weight: 500;
+  font-weight: 400;
   border-radius: 0.5rem;
-  border: 0.1rem solid #397ef7;
   color: #fff;
   background-color: #397ef7;
   -webkit-transition: all 0.3s ease;
@@ -226,7 +225,7 @@ span.vb {
 }
 
 .main__btn:hover {
-  background-color: #2e5cac;
+  background-color: #70a5ff;
 }
 
 .main__btn.sign_in {
@@ -239,10 +238,14 @@ span.vb {
   cursor: pointer;
 }
 
+.custom__select__wrapper.desctop {
+  padding: 1.5rem 0;
+}
+
 .custom__select__wrapper:hover .custom__options__block {
   opacity: 1;
-  padding: 1rem;
-  height: 33.5rem;
+  padding: 1.5rem 2.5rem;
+  height: 43.5rem;
 }
 
 .custom__select__wrapper:hover .custom__select__title .select__arrow {
@@ -273,8 +276,8 @@ span.vb {
 
 .custom__options__block {
   position: absolute;
-  width: 15rem;
-  bottom: calc(100% - 4.5rem);
+  width: 17.5rem;
+  bottom: calc(100% - 4.4rem);
   right: 0;
   -webkit-transform: translate(0, 100%);
           transform: translate(0, 100%);
@@ -282,7 +285,7 @@ span.vb {
   overflow: hidden;
   padding: 0;
   opacity: 0;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background-color: #fff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -291,7 +294,7 @@ span.vb {
 }
 
 .custom__option__wrap {
-  padding: 0.5rem;
+  padding: 1rem;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
@@ -356,6 +359,8 @@ main {
 }
 
 .tab__col {
+  position: relative;
+  z-index: 2;
   width: 15.5%;
   min-width: 3.5rem;
   height: 100%;
@@ -375,6 +380,7 @@ main {
 }
 
 .tab__btn {
+  position: relative;
   width: 100%;
   height: calc(25% - 0.075rem);
   display: -webkit-box;
@@ -386,24 +392,43 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.tab__btn .btn__bg__img {
-  width: 45%;
-}
-
-.tab__btn.active {
-  position: relative;
-  width: 100%;
   z-index: 2;
 }
 
+.tab__btn:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+}
+
+.tab__btn .btn__bg__img {
+  position: relative;
+  width: 45%;
+  z-index: 1;
+}
+
+.tab__btn:hover:after, .tab__btn.active:after {
+  height: calc(100% + 0.2rem);
+}
+
+.tab__btn.active:after {
+  width: calc(100% + 0.5rem);
+  left: 0;
+}
+
+.tab__btn.active {
+  width: 100%;
+}
+
 .tab__btn.active .btn__bg__img {
-  fill: #000;
+  fill: #666666;
 }
 
 .tab__btn.active .btn__bg__img g {
-  fill: #000;
+  fill: #666666;
 }
 
 .tab__btn.first {
@@ -411,11 +436,15 @@ main {
   border-top-left-radius: 1.6rem;
 }
 
-.tab__btn.first.active {
+.tab__btn.first.active, .tab__btn.first:hover {
   background-color: #e8e8e8;
 }
 
-.tab__btn.first.active:before {
+.tab__btn.first.active:after, .tab__btn.first:hover:after {
+  height: calc(100% + 0.2rem);
+}
+
+.tab__btn.first.active:before, .tab__btn.first:hover:before {
   content: "";
   position: absolute;
   top: 0;
@@ -429,11 +458,11 @@ main {
   border-bottom: 1.7rem solid #e8e8e8;
 }
 
-.tab__btn.second.active {
+.tab__btn.second.active, .tab__btn.second:hover {
   background-color: #f2f5fc;
 }
 
-.tab__btn.third.active {
+.tab__btn.third.active, .tab__btn.third:hover {
   background-color: #fcf9f2;
 }
 
@@ -441,8 +470,12 @@ main {
   border-bottom-left-radius: 1.6rem;
 }
 
-.tab__btn.fourth.active {
+.tab__btn.fourth.active, .tab__btn.fourth:hover {
   background-color: #f9f1fc;
+}
+
+.tab__btn.fourth.active:after, .tab__btn.fourth:hover:after {
+  bottom: 0;
 }
 
 .info__container {
@@ -573,6 +606,10 @@ main {
 .right__wrapper {
   width: 44.32%;
   height: 100%;
+  position: relative;
+  z-index: 2;
+  -webkit-box-shadow: -0.5rem 0rem 0.5rem rgba(179, 204, 233, 0.3);
+          box-shadow: -0.5rem 0rem 0.5rem rgba(179, 204, 233, 0.3);
 }
 
 .right__wrapper__container {
@@ -644,9 +681,13 @@ main {
   width: 100%;
   height: 5.6rem;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 0 0 0.9rem rgba(102, 142, 207, 0.2);
-          box-shadow: 0 0 0.9rem rgba(102, 142, 207, 0.2);
-  border: 0.1rem solid rgba(232, 232, 232, 0.9);
+  -webkit-box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
+          box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
+}
+
+.input__block input,
+.input__block button {
+  border: 0.2rem solid #f7f7f7;
 }
 
 .input__block.first {
@@ -672,7 +713,6 @@ main {
   height: 100%;
   font-size: 1.4rem;
   border-radius: inherit;
-  border: none;
 }
 
 .input__block.social__sign__up {
@@ -682,15 +722,15 @@ main {
 
 .input__block.social__sign__up button {
   padding-left: 37.93%;
-  -webkit-box-shadow: inset 0 0 0.8rem rgba(57, 126, 247, 0.03);
-          box-shadow: inset 0 0 0.8rem rgba(57, 126, 247, 0.03);
+  -webkit-box-shadow: inset 0 0 0.8rem rgba(230, 233, 243, 0.03);
+          box-shadow: inset 0 0 0.8rem rgba(230, 233, 243, 0.03);
   color: #4a5569;
   font-weight: 500;
   text-align: left;
 }
 
 .input__block.social__sign__up:hover {
-  background-color: #f1f1f1;
+  opacity: 0.6;
 }
 
 .input__block.email__sign__up {
@@ -709,9 +749,16 @@ main {
 
 .input__block.email__sign__up#pass__field.active {
   height: 5.6rem;
-  -webkit-box-shadow: 0 0 0.9rem rgba(102, 142, 207, 0.2);
-          box-shadow: 0 0 0.9rem rgba(102, 142, 207, 0.2);
-  border: 0.1rem solid rgba(232, 232, 232, 0.9);
+  -webkit-box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
+          box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
+}
+
+.input__block.email__sign__up#pass__field.active input {
+  border: 0.2rem solid #f7f7f7;
+}
+
+.input__block.email__sign__up#pass__field.active input:focus {
+  border: 0.2rem solid #397ef7;
 }
 
 .input__block.email__sign__up span {
@@ -730,27 +777,31 @@ main {
 }
 
 .input__block.email__sign__up input {
-  padding-left: 12.07%;
+  padding-left: 6.07%;
 }
 
 .input__block.email__sign__up input::-webkit-input-placeholder {
   font-size: 1.7rem;
-  color: #d3d3d3;
+  color: #d2d2d2;
 }
 
 .input__block.email__sign__up input:-ms-input-placeholder {
   font-size: 1.7rem;
-  color: #d3d3d3;
+  color: #d2d2d2;
 }
 
 .input__block.email__sign__up input::-ms-input-placeholder {
   font-size: 1.7rem;
-  color: #d3d3d3;
+  color: #d2d2d2;
 }
 
 .input__block.email__sign__up input::placeholder {
   font-size: 1.7rem;
-  color: #d3d3d3;
+  color: #d2d2d2;
+}
+
+.input__block.email__sign__up input:focus {
+  border: 0.2rem solid #397ef7;
 }
 
 .border__block {
@@ -835,28 +886,28 @@ main {
 
 @media screen and (max-width: 992px) {
   .page__wrapper {
-    max-width: 72rem;
+    max-width: 76rem;
   }
   .logo__block {
     width: 10rem;
   }
   .left__block {
-    width: 43rem;
+    width: 46rem;
   }
   .menu__container {
-    width: 29rem;
+    width: 33rem;
   }
   .menu__item.left {
     width: 37.44%;
-    padding-right: 6.42%;
+    padding-right: 5.42%;
   }
   .menu__item.center {
     width: 36.5%;
-    padding: 0 6.42%;
+    padding: 0 5.42%;
   }
   .menu__item.right {
     width: 34.05%;
-    padding-left: 6.42%;
+    padding-left: 5.42%;
   }
   .menu__link {
     font-size: 1.4rem;
@@ -898,6 +949,9 @@ main {
   .info__container .info__title {
     line-height: 1.33;
   }
+  .form__container {
+    padding: 7.4rem 2rem 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -907,6 +961,7 @@ main {
   header {
     position: relative;
     margin: 0;
+    padding: 0 3rem;
     height: 8rem;
     background-color: #fff;
     -webkit-box-shadow: 0 1rem 1rem rgba(179, 204, 233, 0.5);
@@ -1207,6 +1262,8 @@ main {
     left: 100%;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .right__wrapper.active {
     left: 7rem;
