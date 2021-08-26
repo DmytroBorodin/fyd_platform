@@ -342,6 +342,7 @@ main {
       background-color: #e8e8e8;
       &:after {
         height: calc(100% + 0.2rem);
+        top: 0;
       }
       &:before {
         content: "";
@@ -547,11 +548,7 @@ main {
   width: 100%;
   height: 5.6rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
-  input,
-  button {
-    border: 0.2rem solid rgba(247, 247, 247, 1);
-  }
+  box-shadow: 0 0 0 0.3rem #f7f7f7;
   &.first {
     margin-bottom: 2rem;
   }
@@ -570,7 +567,8 @@ main {
     width: 100%;
     height: 100%;
     font-size: 1.4rem;
-    border-radius: inherit;
+    border-radius: 0.5rem;
+    border: 0.2rem solid #e6e9f3;
   }
   &.social__sign__up {
     transition: all 0.3s ease;
@@ -595,9 +593,9 @@ main {
       border: none;
       &.active {
         height: 5.6rem;
-        box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
+        box-shadow: 0 0 0 0.3rem #f7f7f7;
         input {
-          border: 0.2rem solid rgba(247, 247, 247, 1);
+          border: 0.2rem solid #e6e9f3;
           &:focus {
             border: 0.2rem solid #397ef7;
           }

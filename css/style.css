@@ -442,6 +442,7 @@ main {
 
 .tab__btn.first.active:after, .tab__btn.first:hover:after {
   height: calc(100% + 0.2rem);
+  top: 0;
 }
 
 .tab__btn.first.active:before, .tab__btn.first:hover:before {
@@ -681,13 +682,8 @@ main {
   width: 100%;
   height: 5.6rem;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
-          box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
-}
-
-.input__block input,
-.input__block button {
-  border: 0.2rem solid #f7f7f7;
+  -webkit-box-shadow: 0 0 0 0.3rem #f7f7f7;
+          box-shadow: 0 0 0 0.3rem #f7f7f7;
 }
 
 .input__block.first {
@@ -712,7 +708,8 @@ main {
   width: 100%;
   height: 100%;
   font-size: 1.4rem;
-  border-radius: inherit;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #e6e9f3;
 }
 
 .input__block.social__sign__up {
@@ -749,12 +746,12 @@ main {
 
 .input__block.email__sign__up#pass__field.active {
   height: 5.6rem;
-  -webkit-box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
-          box-shadow: 0 0 0.3rem 0.1rem rgba(102, 142, 207, 0.1);
+  -webkit-box-shadow: 0 0 0 0.3rem #f7f7f7;
+          box-shadow: 0 0 0 0.3rem #f7f7f7;
 }
 
 .input__block.email__sign__up#pass__field.active input {
-  border: 0.2rem solid #f7f7f7;
+  border: 0.2rem solid #e6e9f3;
 }
 
 .input__block.email__sign__up#pass__field.active input:focus {
