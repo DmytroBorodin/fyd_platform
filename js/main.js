@@ -81,10 +81,81 @@ formOpenBtn.addEventListener("click", () => {
   });
 });
 
-const inpuBlocks = [...document.querySelectorAll(".email__sign__up")];
 const mainWrap = document.querySelector(".main__wrap");
+const inpuBlocks = [...mainWrap.querySelectorAll(".email__sign__up")];
 
 inpuBlocks[0].addEventListener("click", () => {
   inpuBlocks[1].classList.add("active");
   mainWrap.style.height = "70.4rem";
+});
+
+/* modal window logic */
+
+const modal = document.querySelector(".modal__window__wrapper");
+const forms = [...document.querySelectorAll(".modal__form__wrapper")];
+const fpBtn = document.querySelector(".main__btn.fp");
+
+fpBtn.addEventListener("click", () => {
+  modal.classList.add("active");
+  forms.forEach((block) => {
+    block.classList.contains("forgot__psw")
+      ? block.classList.add("active")
+      : block.classList.remove("active");
+
+    const fields = [...block.querySelectorAll("input")];
+    fields.forEach((field) => {
+      field.value = "";
+    });
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal__window__wrapper")) {
+    modal.classList.remove("active");
+    forms.forEach((form) => {
+      const mainBtn = form.querySelector(".main__btn");
+      if (mainBtn) {
+        mainBtn.setAttribute("disabled", true);
+      }
+    });
+  }
+});
+
+forms.forEach((form) => {
+  const fields = [...form.querySelectorAll("input")];
+  const mainBtn = form.querySelector(".main__btn");
+
+  fields.forEach((field) => {
+    field.addEventListener("input", (e) => {
+      e.target.value !== ""
+        ? mainBtn.removeAttribute("disabled")
+        : mainBtn.removeAttribute("disabled", true);
+    });
+  });
+
+  form.addEventListener("click", (e) => {
+    if (e.target.classList.contains("main__btn")) {
+      form.classList.remove("active");
+      forms[forms.length - 1].classList.add("active");
+    }
+  });
+});
+
+/* sign in/up forms rendering logic */
+
+const formsToggler = document.querySelector(".main__btn.sign_in");
+const btnSpansArr = [...formsToggler.querySelectorAll("span")];
+const formsArray = [...document.querySelectorAll(".form__container")];
+
+const toggleClass = (elemsArr) => {
+  elemsArr.forEach((elem) => {
+    elem.classList.contains("active")
+      ? elem.classList.remove("active")
+      : elem.classList.add("active");
+  });
+};
+
+formsToggler.addEventListener("click", () => {
+  toggleClass(btnSpansArr);
+  toggleClass(formsArray);
 });
