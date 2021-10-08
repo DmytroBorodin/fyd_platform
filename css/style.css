@@ -1054,14 +1054,14 @@ main {
 
 .success__wrapper img {
   width: 14.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.7rem;
 }
 
 .success__wrapper .form__title {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .success__wrapper .modal__subtext {
