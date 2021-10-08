@@ -99,7 +99,7 @@ console.log(fpBtn);
 fpBtn.addEventListener("click", () => {
   modal.classList.add("active");
   forms.forEach((block) => {
-    block.classList.contains("reset__psw")
+    block.classList.contains("forgot__psw")
       ? block.classList.add("active")
       : block.classList.remove("active");
 
