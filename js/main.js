@@ -94,11 +94,12 @@ inpuBlocks[0].addEventListener("click", () => {
 const modal = document.querySelector(".modal__window__wrapper");
 const forms = [...document.querySelectorAll(".modal__form__wrapper")];
 const fpBtn = document.querySelector(".main__btn.fp");
+console.log(fpBtn);
 
 fpBtn.addEventListener("click", () => {
   modal.classList.add("active");
   forms.forEach((block) => {
-    block.classList.contains("forgot__psw")
+    block.classList.contains("reset__psw")
       ? block.classList.add("active")
       : block.classList.remove("active");
 
